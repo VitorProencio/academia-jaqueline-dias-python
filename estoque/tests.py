@@ -36,3 +36,18 @@ class EstoqueTests(TestCase):
         self.client.logout()
         response=self.client.get(reverse('dashboard'))
         self.assertEqual(response.status_code,302)
+
+    def test_entrada_quantidade_zero_rejeitada(self):
+        response = self.client.post(reverse('entrada'), {
+            'produto': self.produto.pk,
+            'quantidade': 0
+        })
+        self.assertEqual(response.status_code, 200)
+        self.produto.refresh_from_db()
+        self.assertEqual(self.produto.quantidade, 8)
+
+    def test_indicadores_dashboard(self):
+        response = self.client.get(reverse('dashboard'))
+        self.assertEqual(response.context['total'], 1)
+        self.assertEqual(response.context['estoque_baixo'], 1)
+        self.assertEqual(response.context['sem_estoque'], 0)
