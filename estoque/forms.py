@@ -24,3 +24,9 @@ class EntradaForm(forms.Form):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
         self.fields['produto'].queryset=Produto.objects.filter(status_cadastro=True)
+
+    def clean_nome_produto(self):
+        nome = self.cleaned_data['nome_produto'].strip()
+        if not nome:
+            raise forms.ValidationError('Informe um nome valido para o produto.')
+        return nome
