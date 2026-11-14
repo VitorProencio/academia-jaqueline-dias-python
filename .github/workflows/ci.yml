@@ -1,0 +1,20 @@
+name: Testes Django
+on:
+  push:
+  pull_request:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependencias do sistema
+        run: sudo apt-get update && sudo apt-get install -y default-libmysqlclient-dev build-essential pkg-config
+      - name: Instalar dependencias
+        run: pip install -r requirements-dev.txt
+      - name: Verificar migracoes
+        run: python manage.py makemigrations --check --dry-run
+      - name: Testes e cobertura
+        run: coverage run manage.py test && coverage report --fail-under=75

@@ -1,0 +1,43 @@
+.titulo_1 {
+    color: #FF426A;
+}
+.btn-menu:hover {
+    background-color: #FF426A !important;
+    color: white !important;
+    border-left: 5px solid black;
+}
+.btn-normal {
+    background-color: #FF426A !important;
+    color: white !important;
+}
+.btn-topo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}
+/* .loading-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9998;
+    background: #13316f;
+    top: 0;
+    left: 0;
+    opacity: .80;
+    display: none;
+}
+.loading {
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -60px;
+    margin-top: -60px;
+    background: url(img/loading.GIF) no-repeat 0 0 transparent;
+    z-index: 9999;
+    border-radius: 100%;
+    opacity: .70;
+    display: none;
+} */
