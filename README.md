@@ -42,3 +42,14 @@ Crie um repositorio **publico** no GitHub, publique o codigo sem `db.sqlite3`, `
 ## Observacoes
 
 Este pacote e uma **primeira conversao de codigo**, nao uma copia executada e homologada do PHP. A interface preserva cores, logo e organizacao principal, mas nao e uma reproducao pixel a pixel. A imagem do produto e o botao de adicionar multiplos produtos do prototipo PHP nao foram incluidos nesta versao inicial. Antes de disponibilizar em producao, configurar seguranca, HTTPS, chave secreta, hospedagem, logs e backup.
+
+## Objetivo do projeto
+
+Sistema de controle de estoque desenvolvido para a Academia de Danca Jaqueline Dias.
+
+## Funcionalidades do MVP
+
+- Cadastro de categorias e produtos.
+- Consulta de produtos e quantidades disponiveis.
+- Registro de entrada de mercadorias.
+- Identificacao de produtos com estoque baixo ou zerado.
