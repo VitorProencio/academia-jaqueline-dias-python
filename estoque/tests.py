@@ -51,3 +51,13 @@ class EstoqueTests(TestCase):
         self.assertEqual(response.context['total'], 1)
         self.assertEqual(response.context['estoque_baixo'], 1)
         self.assertEqual(response.context['sem_estoque'], 0)
+
+    def test_status_visual_estoque(self):
+        self.produto.quantidade = 0
+        self.assertEqual(self.produto.classe_status, 'bg-danger')
+
+        self.produto.quantidade = 5
+        self.assertEqual(self.produto.classe_status, 'bg-warning text-dark')
+
+        self.produto.quantidade = 10
+        self.assertEqual(self.produto.classe_status, 'bg-success')
