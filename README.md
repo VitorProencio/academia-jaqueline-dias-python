@@ -53,3 +53,15 @@ Sistema de controle de estoque desenvolvido para a Academia de Danca Jaqueline D
 - Consulta de produtos e quantidades disponiveis.
 - Registro de entrada de mercadorias.
 - Identificacao de produtos com estoque baixo ou zerado.
+
+## Tecnologias utilizadas
+
+- Python 3
+- Django 5
+- MySQL
+- HTML e CSS
+- Bootstrap
+
+## Controle de versao
+
+O projeto utiliza Git para registrar a evolucao do codigo e GitHub para armazenar o repositorio remoto.
